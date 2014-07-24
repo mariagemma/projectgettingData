@@ -170,5 +170,8 @@ dfReshape <- melt(df, id=c("subject","activity"))
 dfTidyMeans <- dcast(dfReshape, subject + activity ~ variable, mean) 
 
 
+# Save tidy data.
+file.name <- file.path(getwd(), "/data/", "dfTidyMeans.txt")
+write.table(df, file.name, row.names = FALSE, quote = FALSE)
 
 
